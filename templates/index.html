@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+    <title>Automata Chatbot</title>
+</head>
+<body>
+    <h1>Automata Chatbot</h1>
+    <form method="POST">
+        <label for="user_input"> Ask a question:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <input type="submit" value="Ask">
+        
+
+    </form>
+    {% if user_input %}
+        <h2>Your Input:</h2>
+        <p>{{ user_input }}</p>
+        <h2>Response:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body> 
+</html>
