@@ -6,7 +6,7 @@ import string
 pipeline = joblib.load('intent_classifier.pkl')
 
 # Flask app initialization
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
 
 # Function for text preprocessing
 def preprocess(text):
