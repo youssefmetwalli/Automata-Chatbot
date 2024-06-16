@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template
+# src/app.py
+from flask import Flask, request, render_template, url_for
 import joblib
 import string
 
@@ -6,7 +7,7 @@ import string
 pipeline = joblib.load('intent_classifier.pkl')
 
 # Flask app initialization
-app = Flask(__name__, template_folder='../templates')
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 # Function for text preprocessing
 def preprocess(text):
