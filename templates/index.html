@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html lang = 'en'>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automata Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h1>Automata Chatbot</h1>
-    <form method="POST">
-        <label for="user_input"> Ask a question:</label>
-        <input type="text" id="user_input" name="user_input" required>
-        <input type="submit" value="Ask">
-        
-
-    </form>
-    {% if user_input %}
-        <h2>Your Input:</h2>
-        <p>{{ user_input }}</p>
-        <h2>Response:</h2>
-        <p>{{ response }}</p>
-    {% endif %}
-</body> 
+<body class="contact-page">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="form-container">
+        <h1>Automata Chatbot</h1>
+        <form method="POST">
+            <div class="form-pair">
+                <div class="form-item">
+                    <label for="user_input">Ask a question:</label>
+                    <input type="text" id="user_input" name="user_input" required>
+                </div>
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Ask">
+            </div>
+        </form>
+        {% if user_input %}
+        <div class="response">
+            <h2>Your Input:</h2>
+            <p>{{ user_input }}</p>
+            <h2>Response:</h2>
+            <p>{{ response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
 </html>
