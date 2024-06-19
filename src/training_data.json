@@ -1,0 +1,15 @@
+[
+    ["What is a DFA?", "ask_dfa"],
+    ["What is finite automata?", "ask_dfa"],
+    ["Can you explain DFA?", "ask_dfa"],
+    ["Can you explain deterministic finite automaton", "ask_dfa"],
+    ["Tell me about Turing Machines", "ask_turing_machine"],
+    ["What is a Turing Machine?", "ask_turing_machine"],
+    ["Define Turing Machine", "ask_turing_machine"],
+    ["What are regular expressions?", "ask_regex"],
+    ["Can you explain regular expressions?", "ask_regex"],
+    ["Define regular expression", "ask_regex"],
+    ["What is Python?", "unknown"],
+    ["What is the weather today?", "unknown"],
+    ["How are you?", "unknown"]
+]

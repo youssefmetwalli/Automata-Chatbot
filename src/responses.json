@@ -1,0 +1,6 @@
+{
+    "ask_dfa": "A DFA is a deterministic finite automaton.",
+    "ask_turing_machine": "A Turing Machine is a theoretical machine.",
+    "ask_regex": "A regular expression defines a search pattern.",
+    "unknown": "I don't understand. Can you ask something else?"
+}
