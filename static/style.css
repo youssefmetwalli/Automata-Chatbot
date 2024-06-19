@@ -38,7 +38,7 @@ body {
 }
 
 .form-container {
-    max-width: 550px; /* Increased width */
+    max-width: 550px; 
     width: 65%;
     padding: 2rem;
     box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.1);
