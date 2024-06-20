@@ -1,6 +1,19 @@
 {
-    "ask_dfa": "A DFA is a deterministic finite automaton.",
-    "ask_turing_machine": "A Turing Machine is a theoretical machine.",
-    "ask_regex": "A regular expression defines a search pattern.",
+    "ask_automata": "<b>Automata Theory</b> is a branch of theoretical computer science that involves designing abstract machines, and solving computational problems that can be solved through the usage of these machines.",
+    "ask_automaton": "You can represent an automaton using a 5-tuple (Q, ∑, δ, q0, F), where:\nQ is a finite set of states.\n\n∑ is a finite set of symbols, called the alphabet of the automaton.\n\nδ is the transition function.\n\nq0 is the initial state from where any input is processed (q0 ∈ Q).\n\nF is a set of final state/states of Q (F ⊆ Q).",
+    "ask_alphabet": "An <b>alphabet</b> is any finite set of symbols. \nExample − ∑ = {a, b, c, d} is an alphabet set where ‘a’, ‘b’, ‘c’, and ‘d’ are symbols.",
+    "ask_string": "A <b>string</b> is a finite sequence of symbols taken from ∑.\nExample − ‘aabacd’ is a valid string on the alphabet set ∑ = {a, b, c, d}. \n\n A string S accepted by automaton (DFA/NDFA) can be represented as δ*(q0, S) ∈ F \n\n A string S' not accepted by automation (DFA/NDFA) can be represented as δ*(q0, S′) ∉ F ",
+    "ask_string_length": "The length of the string is the number of symbols in a string denoted <b>|S|</b>. \n Examples: If S = If S = ‘babca’, |S|= 5",
+    "ask_empty_string": " An <b>empty string</b> is a string where its length <b>|S|</b> is equal to 0. \n Denoted using λ or ε.",
+    "ask_language": " A <b>language</b> refers to a set of strings composed of symbols from a given alphabet. \n Example: \n\n A language that can take all possible strings of length 2 over the alphabet ∑ = {a, b} is L = { aa, ab, ba, bb }\n\n The language L accepted by automaton(DFA/NDFA) can be represented as {S | S ∈ ∑* and δ*(q0, S) ∈ F} \n\n The language L' not accepted by automaton(DFA/NDFA) can be represented as {S | S ∈ ∑* and δ*(q0, S) ∉ F} ",
+    "ask_kleene": " The Kleene closure is the infinite set of all possible strings with all possible lengths over ∑ excluding λ. \n Example - If ∑ = { a, b } , ∑+ = { a, b, aa, ab, ba, bb,………..}",
+    "ask_transition_function": "Denoted by δ. A <b>transition function</b> is a function where δ: Q × ∑ → Q.\n It defines the rules for moving from one state to another based on the current state and the input symbol being read.",
+    "ask_ndfa": "A <b>NDFA</b> is an automaton where, for a given input symbol, the machine can move to any combination of the states present in the machine. In other words, the exact state to which the machine would move can't be determined.",
+    "ask_dfa": "A <b>DFA</b> is an automaton that consists of a finite set of states, and a transitition function that can map each state and input symbol to a single next state. ",
+    "ask_dfa_vs_ndfa": "<b>DFA</b>: The transition from a state is to a single particular next state for each input symbol. Hence it is called deterministic. Empty string transitions are not seen in DFA. Backtracking is allowed in DFA. Requires more space. A string is accepted by a DFA, if it transits to a final state. <b>NDFA</b>: The transition from a state can be to multiple next states for each input symbol. Hence it is called non-deterministic. NDFA permits empty string transitions. In NDFA, backtracking is not always possible. Requires less space. A string is accepted by a NDFA, if at least one of all possible transitions ends in a final state.",
+    "ask_ndfa_to_dfa": "1) Create a table from the given NDFA. \n2) Create a blank table under possible input alphabets for the DFA. \n Mark the start state for both the NDFA and the DFA. \n 4) Trace the combination of States {Q0, Q1,... , Qn} for each possible input alphabet. \n5) Keep applying step 4 whenever you generate a new DFA state under the input alphabet columns. \n6) The states that have the corresponding final states of the NDFA are the final states for the NFA. ",
+    
+    "ask_turing_machine": "A <b>Turing Machine</b> is a theoretical machine.",
+    "ask_regex": "A <b>regular expression</b> defines a search pattern.",
     "unknown": "I don't understand. Can you ask something else?"
 }
