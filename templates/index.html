@@ -37,7 +37,7 @@
             <h2>Your Input:</h2>
             <p>{{ user_input }}</p>
             <h2>Response:</h2>
-            <p>{{ response }}</p>
+            <p>{{ response|safe }}</p>
         </div>
         {% endif %}
     </div>
