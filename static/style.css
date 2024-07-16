@@ -37,64 +37,6 @@ body {
     padding: 0;
 }
 
-.form-container {
-    max-width: 550px; 
-    width: 65%;
-    padding: 2rem;
-    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.1);
-    background: #ffffff; /* White background */
-    border-radius: 1.1rem;
-}
-
-.form-pair {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-}
-
-.form-item {
-    flex: 1;
-    min-width: calc(50% - 0.625rem);
-    box-sizing: border-box;
-    margin-bottom: 1.65rem;
-}
-
-.form-item label {
-    display: block;
-    font-weight: 550;
-}
-
-.form-item input,
-.form-item textarea {
-    width: 100%;
-    padding: 0.625rem;
-    box-sizing: border-box;
-}
-
-.form-pair:last-of-type .form-item {
-    flex: 1 100%;
-}
-
-.submit-container {
-    text-align: center;
-}
-
-.submit-container input[type="submit"] {
-    background: linear-gradient(to right, #f3e701, #f8e552, #d6ffa7);
-    border: none;
-    border-radius: 1.25rem;
-    padding: 0.875rem 2rem;
-    color: #000;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.submit-container input[type="submit"]:hover {
-    background: linear-gradient(to right, #a8d2ff, #b8eafc, #c1ecf9);
-}
-
 .circles {
     position: absolute;
     top: 0;
@@ -189,4 +131,71 @@ body {
     height: 150px;
     animation-delay: 0s;
     animation-duration: 11s;
+}
+
+.chat-container {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #d4f0fc;
+    color: #000;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #e0f7e9;
+    color: #000;
+}
+
+.input-container {
+    display: flex;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-container button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
 }
