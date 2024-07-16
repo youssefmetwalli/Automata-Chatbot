@@ -19,27 +19,52 @@
         <li></li>
         <li></li>
     </ul>
-    <div class="form-container">
+    <div class="chat-container">
         <h1>Automata Chatbot</h1>
-        <form method="POST">
-            <div class="form-pair">
-                <div class="form-item">
-                    <label for="user_input">Ask a question:</label>
-                    <input type="text" id="user_input" name="user_input" required>
-                </div>
-            </div>
-            <div class="submit-container">
-                <input type="submit" value="Ask">
-            </div>
-        </form>
-        {% if user_input %}
-        <div class="response">
-            <h2>Your Input:</h2>
-            <p>{{ user_input }}</p>
-            <h2>Response:</h2>
-            <p>{{ response|safe }}</p>
+        <div class="messages" id="messages"></div>
+        <div class="input-container">
+            <input type="text" id="user_input" placeholder="Ask a question...">
+            <button onclick="sendMessage()">Send</button>
         </div>
-        {% endif %}
     </div>
+    <script>
+        function addMessage(message, sender) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender + '-message');
+            messageDiv.innerHTML = message;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('user_input').value;
+            if (userInput.trim() === '') return;
+
+            addMessage(userInput, 'user');
+            document.getElementById('user_input').value = '';
+
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({ 'user_input': userInput }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage(data.response, 'bot');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        document.getElementById('user_input').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 </html>
