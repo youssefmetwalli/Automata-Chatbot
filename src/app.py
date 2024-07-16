@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import joblib
 import string
 import json
@@ -89,8 +89,8 @@ def index():
     if request.method == "POST":
         user_input = request.form["user_input"]
         response = get_response(user_input)
-        return render_template("index.html", user_input=user_input, response=response)
-    return render_template("index.html", user_input=None, response=None)
+        return jsonify(response=response)
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
