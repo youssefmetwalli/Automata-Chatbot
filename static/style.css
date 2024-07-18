@@ -199,3 +199,33 @@ body {
 .input-container button:hover {
     background-color: #0056b3;
 }
+
+.print-button {
+    display: block;
+    margin-top: 2rem;
+    background-color: linear-gradient(-45deg, #ebf98c, #f2e823, #f7f073,);
+
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .chat-container, .chat-container * {
+        visibility: visible;
+    }
+    .chat-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+    }
+    .user-message {
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .bot-message {
+        font-size: 16px;
+    }
+}
