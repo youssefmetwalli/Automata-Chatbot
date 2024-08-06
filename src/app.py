@@ -30,18 +30,49 @@ keywords = {
     "turing machine": "ask_turing_machine",
     "regular expression": "ask_regex",
     "regex": "ask_regex",
-    "Ndfa": "ask_ndfa",
-    "ndfa": "ask_ndfa"
+    "ndfa": "ask_ndfa",
+    "automata theory": "ask_automata", 
+    "alphabet": "ask_alphabet",
+    "string": "ask_string",
+    "string length": "ask_string_length",
+    "language": "ask_language",
+    "kleene": "ask_kleene",
+    "empty string": "ask_empty_string",
+    "automata": "ask_automata",
+    "automaton": "ask_automaton",
+    "transition function": "ask_transition_function",
+    "dfa_minimization": "ask_dfa_minimization",
+    "mealy machine": "ask_mealy_machine",
+    "moore machine": "ask_moore_machine",
+    "grammar": "ask_grammar",
+    "derivation grammar": "ask_derivation_grammar",
+    "chomsky": "ask_chomsky_classification"
+
 }
 
 # Define intent priorities (lower number means higher priority)
 intent_priorities = {
-    "ask_dfa_vs_ndfa": 1,
+    "ask_dfa_vs_ndfa": 1,           
     "ask_ndfa": 2,
     "ask_dfa": 3,
     "ask_turing_machine": 4,
     "ask_regex": 5,
-    "unknown": 6
+    "ask_kleene": 6,
+    "ask_empty_string": 7,
+    "ask_language": 8,
+    "ask_string_length": 9,
+    "ask_string": 10,
+    "ask_alphabet": 11,
+    "ask_automata": 12,
+    "ask_automaton": 13,
+    "ask_transition_function": 14,
+    "ask_dfa_minimization": 15,
+    "ask_mealy_machine": 16,
+    "ask_moore_machine": 17,
+    "ask_grammar": 18,
+    "ask_derivation_grammar": 19,
+    "ask_chomsky_classification": 20,
+    "unknown": 21
 }
 
 def get_intent_from_keywords(user_input):
@@ -92,5 +123,16 @@ def index():
         return jsonify(response=response)
     return render_template("index.html")
 
+@app.route("/chat")
+def chat():
+    return render_template("chat.html")
+
+@app.route("/quizzes")
+def quizzes():
+    return render_template("quizzes.html")
+
+@app.route("/lectures")
+def lectures():
+    return render_template("lectures.html")
 if __name__ == "__main__":
     app.run(debug=True)
